@@ -8,19 +8,24 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
+        src: '<%= pkg.name %>.js',
+        dest: '<%= pkg.name %>.min.js'
       }
     },
 
     coffee: {
-      glob_to_multiple: {
-        expand: true,
-        flatten: true,
-        cwd: 'src',
-        src: ['*.coffee'],
-        dest: 'src/',
-        ext: '.js'
+      compile: {
+        files: {
+          'sir-trevor-module-block.js': ['src/*.coffee']
+        }
+      },
+      compileWithMaps: {
+        options: {
+          sourceMap: true
+        },
+        files: {
+          'build/sir-trevor-module-block.js': ['src/*.coffee']
+        }
       }
     },
 
@@ -38,7 +43,7 @@ module.exports = function(grunt) {
     imageEmbed: {
       dist: {
         src: [ "build/sir-trevor-module-block.css" ],
-        dest: "build/sir-trevor-module-block.css",
+        dest: "sir-trevor-module-block.css",
         options: {
           deleteAfterEncoding : false
         }
@@ -48,7 +53,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: 'src/*.coffee',
-        tasks: ['coffee'],
+        tasks: ['coffee:compileWithMaps'],
         options: {
           debounceDelay: 250
         }
@@ -71,6 +76,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-image-embed');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('default', ['coffee', 'sass', 'imageEmbed', 'uglify']);
 
 };
