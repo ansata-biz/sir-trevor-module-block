@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'ST-ModuleBlock';
+  src: url('../icons/ST-ModuleBlock.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.st-block-control[data-type=module] .st-icon,
+.st-icon[data-icon=module]
+{
+  font-family: 'ST-ModuleBlock';
+}
+
+.st-block[data-type=module] {
+  .st-block__input-container {
+    text-align: center;
+
+    input {
+      width: 80%;
+      max-width: 32em;
+    }
+  }
+}
