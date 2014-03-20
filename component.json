@@ -1,0 +1,16 @@
+{
+  "name": "sir-trevor-module-block",
+  "repo": "ansata-biz/sir-trevor-module-block",
+  "version": "0.1.0",
+  "description": "jQuery component",
+  "keywords": [ "sir-trevor", "block", "module", "component" ],
+  "license": "MIT",
+
+  "main": "build/sir-trevor-module-block.min.js",
+  "scripts": [ "build/sir-trevor-module-block.min.js" ],
+  "styles": [ "build/sir-trevor-module-block.css" ],
+
+  "dependencies": {
+    "madebymany/sir-trevor-js": "*"
+  }
+}
