@@ -2,7 +2,7 @@
   "name": "sir-trevor-module-block",
   "repo": "ansata-biz/sir-trevor-module-block",
   "version": "0.1.0",
-  "description": "jQuery component",
+  "description": "Custom module block component",
   "keywords": [ "sir-trevor", "block", "module", "component" ],
   "license": "MIT",
 
